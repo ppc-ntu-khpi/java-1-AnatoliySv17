@@ -141,7 +141,7 @@ public class CustomerTest {
 ```
 2. Скріншот роботи програми:
 
-![1](advanced.png)
+![1](https://github.com/ppc-ntu-khpi/java-1-AnatoliySv17/raw/main/Solution/advanced.png)
 
   * зробити та зберегти (тека **Solution**) у файл ````advanced.png```` **скріншот** результатів роботи програми, та модифікувати файл ````README.md````відповідним чином
 
