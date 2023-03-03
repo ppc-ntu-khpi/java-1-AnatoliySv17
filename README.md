@@ -65,7 +65,7 @@ public class CustomerTest {
 
 2. Скріншот роботи програми:
 
-![1](done.png)
+![1](https://github.com/ppc-ntu-khpi/java-1-AnatoliySv17/raw/main/Solution/done.png)
 
 **На завершення виконання лабораторної роботи закомітьте ваш проект до репозиторію та здайте завдання через Google Classroom, вказавши посилання на Ваш репозиторій.**
 
