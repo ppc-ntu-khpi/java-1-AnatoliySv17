@@ -14,16 +14,58 @@
 
 **УВАГА! Repl.It на даний момент не підтримує пакети, тож краще виконувати роботу в Netbeans!** Якщо виконуєте в Repl.It - робите як минулого разу - все в дефолтному пакеті (й не забувайте про файли ````.replit```` і ````start.sh````!).
 
+## Результат: 
+
+1. Код програми:
+
+``` java
+package domain;
+public class Customer {
+    private int ID = 1;
+    private boolean isNew = true;
+    private double total = 1000.0;
+```    
+
 ## Завдання 2. Додавання в клас методів 
 
 Додати до класу метод ````displayCustomerInfo````, який виводить на консоль інформацію про клієнта з допомогою ````System.out.println````. Кожен рядок має містити відповідну мітку, наприклад, "Total purchases are:" (див. перердню роботу).
 
+## Результат: 
+
+1. Код програми:
+
+``` java
+public void displayCustomerInfo() {
+    System.out.println("Customer ID: " + ID);
+    System.out.println("Customer status: " + (isNew ? "New" : "Existing"));
+    System.out.println("Total purchases are: " + total);
+    }
+}
+```
 
 ## Перевірка працездатності створеного класу
 
 1. Створити в **пакеті ````test````** клас ````CustomerTest````, в методі ````main```` якого створити об'єкт класу ```` Сustomer ```` та вивести на екран його властивості з допомогою методу ````displayCustomerInfo```` (див. відеозапис лекції). 
 2. **запустіть** його (<kbd>F6</kbd> у NetBeans для запуску головного виконуваного файлу, <kbd>SHIFT</kbd>+<kbd>F6</kbd> - для запуску поточного файлу)
 3. зробіть та збережіть (тека **Solution**) у файл ````done.png```` **скріншот** результатів роботи програми 
+
+## Результат: 
+
+1. Код програми:
+
+``` java
+package test;
+import domain.Customer;
+public class CustomerTest {
+    public static void main(String[] args) {
+        Customer customer = new Customer();
+        customer.displayCustomerInfo();
+    }
+```
+
+2. Скріншот роботи програми:
+
+![1](https://github.com/ppc-ntu-khpi/java-1-AnatoliySv17/raw/main/Solution/done.png)
 
 **На завершення виконання лабораторної роботи закомітьте ваш проект до репозиторію та здайте завдання через Google Classroom, вказавши посилання на Ваш репозиторій.**
 
@@ -35,7 +77,72 @@
   * додати **методи для зміни атрибутів** - ````setID````, ````setStatus````, ````setTotal```` з відповідними параметрами та перевіркою присвоюваних значень (можуть або нічого не повертати, або повертати булевське значення, див. відеозапис лекції). 
 **Підказка:** натисніть в Netbeans <kbd>Alt</kbd> + <kbd>Insert</kbd> і оберіть пункт "Getter and Setter..." - Netbeans напише все замість вас!
 ![](https://github.com/ppc-ntu-khpi/Class-Starter/raw/main/images/GetterAndSetter.png)
+
+## Результат: 
+
+1. Код програми:
+
+``` java
+package domain;
+public class Customer {
+    private int ID;
+    private boolean isNew;
+    private double total;
+public Customer() {
+        this.ID = 1;
+        this.isNew = true;
+        this.total = 1000.0;
+    }
+public Customer(int ID, boolean isNew, double total) {
+        this.ID = ID;
+        this.isNew = isNew;
+        this.total = total;
+    }
+public void displayCustomerInfo() {
+        System.out.println("Customer ID: " + ID);
+        System.out.println("Customer status: " + (isNew ? "New" : "Existing"));
+        System.out.println("Total purchases are: " + total);
+    }
+public void setID(int ID) {
+        if (ID > 0) {
+            this.ID = ID;
+        }
+    }
+public void setStatus(boolean isNew) {
+        this.isNew = isNew;
+    }
+public void setTotal(double total) {
+        if (total > 0) {
+            this.total = total;
+        }
+    }
+}
+```
+
   * **використати ці методи** в методі в методі ````main```` класу````CustomerTest````
+
+## Результат: 
+
+1. Код програми:
+
+``` java
+package test;
+import domain.Customer;
+public class CustomerTest {
+    public static void main(String[] args) {
+        Customer customer = new Customer(1, true, 1000.0);
+        customer.displayCustomerInfo();
+            customer.setID(5);
+            customer.setStatus(false);
+            customer.setTotal(2000);
+        customer.displayCustomerInfo();
+    }
+}
+```
+2. Скріншот роботи програми:
+
+![1](https://github.com/ppc-ntu-khpi/java-1-AnatoliySv17/raw/main/Solution/advanced.png)
+
   * зробити та зберегти (тека **Solution**) у файл ````advanced.png```` **скріншот** результатів роботи програми, та модифікувати файл ````README.md````відповідним чином
 
 
